@@ -1,12 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://MundoPizza.gd" type="Script" id=1]
 [ext_resource path="res://TileChorizos.tres" type="TileSet" id=2]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Enemy.tscn" type="PackedScene" id=4]
 [ext_resource path="res://OutOfWorld.tscn" type="PackedScene" id=5]
+[ext_resource path="res://textures/background/parallax-mountain-bg.png" type="Texture" id=6]
 
-[node name="Node" type="Node" index="0"]
+[node name="Node" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -45,5 +46,20 @@ position = Vector2( 569.716, 319.802 )
 [node name="OutOfWorld" parent="." index="3" instance=ExtResource( 5 )]
 
 position = Vector2( 1050, 390 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="4"]
+
+layer = -10
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer" index="0"]
+
+scale = Vector2( 3.75, 3.75 )
+texture = ExtResource( 6 )
+centered = false
+_sections_unfolded = [ "Offset" ]
 
 

@@ -1,25 +1,26 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Enemy.gd" type="Script" id=1]
-[ext_resource path="res://textures/chorizo0.png" type="Texture" id=2]
-[ext_resource path="res://textures/chorizo1.png" type="Texture" id=3]
-[ext_resource path="res://textures/chorizo2.png" type="Texture" id=4]
-[ext_resource path="res://textures/chorizo3.png" type="Texture" id=5]
+[ext_resource path="res://Projectile.tscn" type="PackedScene" id=2]
+[ext_resource path="res://textures/chorizo0.png" type="Texture" id=3]
+[ext_resource path="res://textures/chorizo1.png" type="Texture" id=4]
+[ext_resource path="res://textures/chorizo2.png" type="Texture" id=5]
+[ext_resource path="res://textures/chorizo3.png" type="Texture" id=6]
 
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
-"frames": [ ExtResource( 2 ) ],
+"frames": [ ExtResource( 3 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ) ],
+"frames": [ ExtResource( 4 ) ],
 "loop": true,
 "name": "jump",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
 "loop": true,
 "name": "walk",
 "speed": 5.0
@@ -46,11 +47,13 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
+FOOD_ITEM = ExtResource( 2 )
 WALK_SPEED = 200
 MAX_HEALTH = 100
-THROW_SPEED = 800
+THROW_SPEED = 400
 MAX_ABYSS = 250
 GRAVITY = 800
+RADIUS = 800
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 

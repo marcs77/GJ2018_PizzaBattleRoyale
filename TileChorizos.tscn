@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://textures/tilemap1.tres" type="Texture" id=1]
+[ext_resource path="res://textures/tilemap1.png" type="Texture" id=1]
+[ext_resource path="res://textures/tilemap1.tres" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -12,9 +13,7 @@ extents = Vector2( 30, 30 )
 custom_solver_bias = 0.0
 points = PoolVector2Array( 30, -30, 30, 30, -30, 30 )
 
-[node name="Node" type="Node" index="0"]
-
-editor/display_folded = true
+[node name="Node" type="Node"]
 
 [node name="Brick1" type="Sprite" parent="." index="0"]
 
@@ -41,7 +40,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="Ramp1" type="Sprite" parent="." index="1"]
 
 position = Vector2( 60, 0 )
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 60, 186, 60, 60 )
 _sections_unfolded = [ "Region", "Transform" ]
@@ -63,7 +62,7 @@ shape = SubResource( 2 )
 [node name="Ramp2" type="Sprite" parent="." index="2"]
 
 position = Vector2( 120, 0 )
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 186, 186, 60, 60 )
 _sections_unfolded = [ "Region", "Transform" ]
