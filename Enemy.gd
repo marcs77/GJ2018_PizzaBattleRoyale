@@ -2,19 +2,26 @@ extends KinematicBody2D
 
 enum { STATE_WALKING, STATE_IDLE }
 
+export (PackedScene) var FOOD_ITEM
+
 export (float) var WALK_SPEED = 200
 export (int) var MAX_HEALTH = 100
-export (float) var THROW_SPEED = 800
+export (float) var THROW_SPEED = 400
 export (float) var MAX_ABYSS = 250
 export (float) var GRAVITY = 800
+export (float) var RADIUS = 800
 
 var vel = Vector2()
 
 var idle = false
 var walk_left = false
 var action_timer = 0
+var shootTime = 0
+var nextShoot = 2
 
 var health = MAX_HEALTH
+
+var player
 
 func _process(delta):
 	if (health == 0):
@@ -31,7 +38,7 @@ func reduceHealth(dmg):
 func _ready():
 	# Called every time the node is added t the scene.
 	# Initialization here
-	pass
+	player = get_parent().find_node("Player")
 
 func _physics_process(delta):
 	var hmov = 0
@@ -63,7 +70,20 @@ func _physics_process(delta):
 	
 	vel.x = WALK_SPEED*hmov
 	vel.y += GRAVITY*delta
-		
+	
+	if position.distance_to(player.position) < RADIUS:
+		if shootTime > nextShoot:
+			var dir = (player.position - position).normalized()
+			var p = FOOD_ITEM.instance()
+			get_tree().root.add_child(p)
+			p.position = position
+			p.isEvil = true
+			p.setEvil()
+			p.set_linear_velocity(dir * THROW_SPEED)
+			add_collision_exception_with(p)
+			shootTime = 0
+		else:
+			shootTime += delta
 	vel = move_and_slide(vel, Vector2(0,-1))
 
 

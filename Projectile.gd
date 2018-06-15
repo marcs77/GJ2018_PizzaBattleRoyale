@@ -4,10 +4,19 @@ extends RigidBody2D
 # var a = 2
 # var b = "textvar"
 
+export (Texture) var withPineapple
+export (Texture) var withoutPineapple
+
+var isEvil = false 
+
+func setEvil():
+	if isEvil:
+		$Sprite.texture = withoutPineapple
+	else:
+		$Sprite.texture = withPineapple
+
 func _ready():
-	# Called every time the node is added to the scene.
-	# Initialization here
-	pass
+	setEvil()
 
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.

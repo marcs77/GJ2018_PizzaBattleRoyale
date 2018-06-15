@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/chorizo_sheet.png-989a64de7b38e2f43f308ed760884780.stex"
+path="res://.import/parallax-mountain-foreground-trees.png-16cb36194db0ba26300117220e424b77.stex"
 
 [deps]
 
-source_file="res://textures/chorizo_sheet.png"
-source_md5="14646e409018ceffa1d728ec6ce3d548"
+source_file="res://textures/background/parallax-mountain-foreground-trees.png"
+source_md5="097b64262e32ef41a4790f419496efcc"
 
-dest_files=[ "res://.import/chorizo_sheet.png-989a64de7b38e2f43f308ed760884780.stex" ]
-dest_md5="e16be5a88a9c675d578a6d07074cf7ee"
+dest_files=[ "res://.import/parallax-mountain-foreground-trees.png-16cb36194db0ba26300117220e424b77.stex" ]
+dest_md5="43f4f1feec14897ab57fd93b553d4319"
 
 [params]
 
