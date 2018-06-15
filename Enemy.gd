@@ -14,8 +14,15 @@ var idle = false
 var walk_left = false
 var action_timer = 0
 
-var health = 0
+var health = MAX_HEALTH
 
+func _process(delta):
+	if (health == 0):
+		kill()
+
+func kill():
+	queue_free()
+	
 func reduceHealth(dmg):
 	health -= dmg
 	if health == 0:

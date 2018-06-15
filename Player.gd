@@ -14,7 +14,7 @@ export (float) var THROW_SPEED = 800
 var vel = Vector2()
 var jumping = false
 var jumpingTime = 0
-var points = 0
+var points = 20
 var health
 
 func addPoints(additionalPoints):
@@ -55,14 +55,17 @@ func get_input():
 		jumping = false
 		
 	if Input.is_action_just_pressed("fire"):
-		var p = FOOD_ITEM.instance()
-		print("sdfsdfasdf")
-		get_tree().root.add_child(p)
-		p.position = position
-		p.set_linear_velocity(get_local_mouse_position().normalized() * THROW_SPEED)
-		add_collision_exception_with(p)
-		
+		if (points > 0):
+			var p = FOOD_ITEM.instance()
+			print("sdfsdfasdf")
+			get_tree().root.add_child(p)
+			p.position = position
+			p.set_linear_velocity(get_local_mouse_position().normalized() * THROW_SPEED)
+			add_collision_exception_with(p)
+			points-=1
 	vel.x = hInput * MAX_WALK_SPEED
+	
+		
 	
 	if jumping:
 		$AnimatedSprite.animation = "jump"

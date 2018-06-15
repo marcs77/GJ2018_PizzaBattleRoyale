@@ -1,11 +1,11 @@
-extends RigidBody2D
+extends Area2D
 
 # class member variables go here, for example:
 # var a = 2
 # var b = "textvar"
 
 func _ready():
-	# Called every time the node is added to the scene.
+	# Called when the node is added to the scene for the first time.
 	# Initialization here
 	pass
 
@@ -14,13 +14,7 @@ func _ready():
 #	# Update game logic here.
 #	pass
 
-func _on_death():
-	queue_free()
 
-func _on_Projectile_body_entered(body):
-	if body is preload("res://Enemy.gd"):
-		body.reduceHealth (20)
-		queue_free()
-	
-	
-	
+func _on_OutOfWorld_body_entered(body):
+	if (body is preload("res://Player.gd")):
+		body.kill()
