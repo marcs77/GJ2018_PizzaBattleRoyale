@@ -21,8 +21,7 @@ func addPoints(additionalPoints):
 	points+=additionalPoints
 
 func _ready():
-	# Called every time the node is added to the scene.
-	# Initialization here
+	$AnimatedSprite.play()
 	pass
 
 func get_input():
@@ -51,6 +50,19 @@ func get_input():
 		add_collision_exception_with(p)
 		
 	vel.x = hInput * MAX_WALK_SPEED
+	
+	if jumping:
+		$AnimatedSprite.animation = "jump"
+	else:
+		
+		if vel.x != 0:
+			if !(is_on_floor() || is_on_wall()):
+				$AnimatedSprite.animation = "jump"
+			else:
+				$AnimatedSprite.animation ="run"		
+		else:
+			$AnimatedSprite.animation = "stand"
+	
 func _physics_process(delta):
 	get_input()
 	

@@ -12,7 +12,7 @@ extents = Vector2( 30, 30 )
 custom_solver_bias = 0.0
 points = PoolVector2Array( 30, -30, 30, 30, -30, 30 )
 
-[node name="Node" type="Node"]
+[node name="Node" type="Node" index="0"]
 
 editor/display_folded = true
 
