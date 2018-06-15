@@ -34,7 +34,7 @@ tracks/1/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( 1.1, 1.1 ), Vector2( 1, 1 ) ]
 }
 
-[node name="Pizza" type="Area2D" index="0"]
+[node name="Pizza" type="Area2D"]
 
 input_pickable = true
 space_override = 3
@@ -46,7 +46,7 @@ audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform", "Z Index" ]
-AMOUNT = 1
+AMOUNT = 5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="0"]
 

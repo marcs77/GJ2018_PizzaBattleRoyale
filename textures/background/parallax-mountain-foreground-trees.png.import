@@ -7,7 +7,10 @@ path="res://.import/parallax-mountain-foreground-trees.png-16cb36194db0ba2630011
 [deps]
 
 source_file="res://textures/background/parallax-mountain-foreground-trees.png"
+source_md5="097b64262e32ef41a4790f419496efcc"
+
 dest_files=[ "res://.import/parallax-mountain-foreground-trees.png-16cb36194db0ba26300117220e424b77.stex" ]
+dest_md5="43f4f1feec14897ab57fd93b553d4319"
 
 [params]
 

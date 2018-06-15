@@ -11,12 +11,13 @@ export (float) var MAX_WALK_SPEED = 200
 export (int) var MAX_HEALTH = 100
 export (float) var THROW_SPEED = 800
 export (float) var SHOOT_COOLDOWN = 1
+export (float) var Po = 1
 
 var activated = true
 var vel = Vector2()
 var jumping = false
 var jumpingTime = 0
-var points = 20
+var points = 1
 var health
 
 var shootTimer = 0
@@ -31,6 +32,10 @@ func _ready():
 
 func reduceHealth (healthToReduce):
 	health = clamp (health -healthToReduce,0,MAX_HEALTH)
+	$Die.play()
+
+func dieSOUND():
+	$Die.play()
 
 func kill ():
 	health = 0

@@ -7,7 +7,10 @@ path="res://.import/pizza_barbacoa.png-21ce02cc39885d6289149ba6ab69e495.stex"
 [deps]
 
 source_file="res://textures/pizza_barbacoa.png"
+source_md5="d6b4024c6131faeaf8014f82f2ab7862"
+
 dest_files=[ "res://.import/pizza_barbacoa.png-21ce02cc39885d6289149ba6ab69e495.stex" ]
+dest_md5="b6e607d63a227424e769baf9ee4b76bb"
 
 [params]
 

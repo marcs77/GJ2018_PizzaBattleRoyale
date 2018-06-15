@@ -7,7 +7,10 @@ path="res://.import/chorizo3.png-0c903491872b25e65ff9d3ff4ba97152.stex"
 [deps]
 
 source_file="res://textures/chorizo3.png"
+source_md5="83fb57bb4efdb2f50469eb3303cc885e"
+
 dest_files=[ "res://.import/chorizo3.png-0c903491872b25e65ff9d3ff4ba97152.stex" ]
+dest_md5="f3a0d6951a23d0404b46220b77e372a6"
 
 [params]
 
