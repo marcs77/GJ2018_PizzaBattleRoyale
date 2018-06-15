@@ -8,10 +8,16 @@ export (float) var GRAVITY_DOWN = 800
 export (float) var JUMP_TIME = 0.5
 export (float) var JUMP_SPEED = 250
 export (float) var MAX_WALK_SPEED = 200
+export (int) var MAX_HEALTH = 100
 
 var vel = Vector2()
 var jumping = false
 var jumpingTime = 0
+var points = 0
+var health 
+
+func addPoints(additionalPoints):
+	points+=additionalPoints
 
 func _ready():
 	# Called every time the node is added to the scene.

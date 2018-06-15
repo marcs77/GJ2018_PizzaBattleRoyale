@@ -19,7 +19,7 @@ custom_solver_bias = 0.0
 radius = 35.7601
 height = 36.9656
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -31,6 +31,7 @@ GRAVITY_DOWN = 800
 JUMP_TIME = 0.3
 JUMP_SPEED = 300.0
 MAX_WALK_SPEED = 200
+MAX_HEALTH = 100
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 

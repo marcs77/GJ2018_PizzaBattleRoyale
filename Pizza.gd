@@ -15,6 +15,6 @@ func _ready():
 
 func _on_Pizza_body_entered(body):
 	if body is player_class:
-		
+		body.addPoints (1)
 		queue_free()
 	
