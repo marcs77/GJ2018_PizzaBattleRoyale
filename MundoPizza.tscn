@@ -1,19 +1,15 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://TileChorizos.tres" type="TileSet" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://HUD.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Pizza.tscn" type="PackedScene" id=4]
-
-[sub_resource type="CircleShape2D" id=1]
-
-custom_solver_bias = 0.0
-radius = 29.8452
 
 [node name="Node" type="Node" index="0"]
 
 [node name="TileMap" type="TileMap" parent="." index="0"]
 
+editor/display_folded = true
 position = Vector2( -327.279, 12.5876 )
 mode = 0
 tile_set = ExtResource( 1 )
@@ -33,43 +29,16 @@ occluder_light_mask = 1
 format = 1
 tile_data = PoolIntArray( 393218, 0, 0, 393219, 536870913, 0, 393232, 0, 0, 458755, 0, 0, 458756, 536870913, 0, 458767, 0, 0, 458768, 0, 0, 524291, 0, 0, 524292, 0, 0, 524293, 0, 0, 524294, 0, 0, 524295, 536870913, 0, 524302, 0, 0, 524303, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 589836, 0, 0, 589837, 0, 0, 589838, 0, 0 )
 
-[node name="RigidBody2D" type="RigidBody2D" parent="." index="1"]
+[node name="CanvasLayer" parent="TileMap" index="0" instance=ExtResource( 2 )]
 
-editor/display_folded = true
-position = Vector2( 197, 270 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-mode = 0
-mass = 1.0
-friction = 1.0
-bounce = 0.0
-gravity_scale = 1.0
-custom_integrator = false
-continuous_cd = 0
-contacts_reported = 0
-contact_monitor = false
-sleeping = false
-can_sleep = true
-linear_velocity = Vector2( 0, 0 )
-linear_damp = -1.0
-angular_velocity = 0.0
-angular_damp = -1.0
-
-[node name="Sprite" type="Sprite" parent="RigidBody2D" index="0"]
-
-texture = ExtResource( 2 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" index="1"]
-
-shape = SubResource( 1 )
-
-[node name="Player" parent="." index="2" instance=ExtResource( 3 )]
+[node name="Player" parent="." index="1" instance=ExtResource( 3 )]
 
 position = Vector2( 380, 70 )
 
-[node name="Pizza" parent="." index="3" instance=ExtResource( 4 )]
+[node name="Pizza" parent="." index="2" instance=ExtResource( 4 )]
 
 position = Vector2( 785.082, 479.42 )
+
+[node name="Hud" parent="." index="3" instance=ExtResource( 2 )]
 
 
