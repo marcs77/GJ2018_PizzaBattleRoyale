@@ -7,7 +7,7 @@
 [ext_resource path="res://OutOfWorld.tscn" type="PackedScene" id=5]
 [ext_resource path="res://textures/background/parallax-mountain-bg.png" type="Texture" id=6]
 
-[node name="Node" type="Node" index="0"]
+[node name="Node" type="Node"]
 
 script = ExtResource( 1 )
 

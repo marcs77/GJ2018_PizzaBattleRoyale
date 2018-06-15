@@ -26,10 +26,7 @@ func _ready():
 func _on_death():
 	queue_free()
 
-func _on_Projectile_body_entered(body):
-	if body is preload("res://Enemy.gd"):
+func _on_hit(body):
+	if ( (body is preload("res://Enemy.gd") && !isEvil) || (body is preload("res://Player.gd") && isEvil)):
 		body.reduceHealth (20)
 		queue_free()
-	
-	
-	
