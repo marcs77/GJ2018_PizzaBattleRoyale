@@ -1,0 +1,90 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Enemy.gd" type="Script" id=1]
+[ext_resource path="res://textures/chorizo0.png" type="Texture" id=2]
+[ext_resource path="res://textures/chorizo1.png" type="Texture" id=3]
+[ext_resource path="res://textures/chorizo2.png" type="Texture" id=4]
+[ext_resource path="res://textures/chorizo3.png" type="Texture" id=5]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "jump",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+
+custom_solver_bias = 0.0
+radius = 36.0
+height = 37.0
+
+[node name="Enemy" type="KinematicBody2D"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+WALK_SPEED = 200
+MAX_HEALTH = 100
+THROW_SPEED = 800
+MAX_ABYSS = 250
+GRAVITY = 800
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
+
+scale = Vector2( 5, 5 )
+frames = SubResource( 1 )
+animation = "idle"
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
+shape = SubResource( 2 )
+
+[node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="." index="2"]
+
+position = Vector2( 1.43051e-06, -5 )
+scale = Vector2( 6, 6.5 )
+rect = Rect2( -10, -10, 20, 20 )
+pause_animations = true
+freeze_bodies = true
+pause_particles = true
+pause_animated_sprites = true
+process_parent = false
+physics_process_parent = false
+
+[node name="RayRight" type="RayCast2D" parent="." index="3"]
+
+position = Vector2( 70, -71.1772 )
+enabled = true
+exclude_parent = true
+cast_to = Vector2( 0, 240 )
+collision_mask = 1
+
+[node name="RayLeft" type="RayCast2D" parent="." index="4"]
+
+position = Vector2( -70, -71.1772 )
+rotation = 0.00240405
+enabled = true
+exclude_parent = true
+cast_to = Vector2( 0, 240 )
+collision_mask = 1
+
+
