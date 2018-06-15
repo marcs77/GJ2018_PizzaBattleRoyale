@@ -1,18 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://Projectile.tscn" type="PackedScene" id=2]
-[ext_resource path="res://textures/player.png" type="Texture" id=3]
-[ext_resource path="res://HUD.tscn" type="PackedScene" id=4]
-
-[sub_resource type="SpriteFrames" id=1]
-
-animations = [ {
-"frames": [ ExtResource( 3 ) ],
-"loop": true,
-"name": "idle",
-"speed": 5.0
-} ]
+[ext_resource path="res://HUD.tscn" type="PackedScene" id=3]
+[ext_resource path="res://textures/player_running.png" type="Texture" id=4]
+[ext_resource path="res://textures/player.png" type="Texture" id=5]
+[ext_resource path="res://textures/player_running2.png" type="Texture" id=6]
 
 [sub_resource type="CapsuleShape2D" id=2]
 
@@ -20,7 +13,26 @@ custom_solver_bias = 0.0
 radius = 35.7601
 height = 36.9656
 
-[node name="Player" type="KinematicBody2D"]
+[sub_resource type="SpriteFrames" id=3]
+
+animations = [ {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "stand",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "run",
+"speed": 5.0
+} ]
+
+[node name="Player" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -35,20 +47,13 @@ MAX_WALK_SPEED = 200
 MAX_HEALTH = 100
 THROW_SPEED = 800
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
-
-scale = Vector2( 0.8, 0.8 )
-frames = SubResource( 1 )
-animation = "idle"
-offset = Vector2( -4, 2 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
 shape = SubResource( 2 )
 
-[node name="Camera2D" type="Camera2D" parent="." index="2"]
+[node name="Camera2D" type="Camera2D" parent="." index="1"]
 
+editor/display_folded = true
 anchor_mode = 1
 rotating = false
 current = true
@@ -72,6 +77,11 @@ editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
 
-[node name="CanvasLayer" parent="Camera2D" index="0" instance=ExtResource( 4 )]
+[node name="CanvasLayer" parent="Camera2D" index="0" instance=ExtResource( 3 )]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="2"]
+
+frames = SubResource( 3 )
+animation = "run"
 
 
