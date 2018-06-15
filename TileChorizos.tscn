@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://textures/tilemap1.png" type="Texture" id=1]
+[ext_resource path="res://textures/tilemap1.tres" type="Texture" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -12,14 +12,14 @@ extents = Vector2( 30, 30 )
 custom_solver_bias = 0.0
 points = PoolVector2Array( 30, -30, 30, 30, -30, 30 )
 
-[node name="Node" type="Node"]
+[node name="Node" type="Node" index="0"]
 
 [node name="Brick1" type="Sprite" parent="." index="0"]
 
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 60, 60 )
-_sections_unfolded = [ "Transform" ]
+region_rect = Rect2( 0, 186, 60, 60 )
+_sections_unfolded = [ "Region", "Transform" ]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Brick1" index="0"]
 
@@ -41,7 +41,7 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( 60, 0 )
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 60, 0, 60, 60 )
+region_rect = Rect2( 60, 186, 60, 60 )
 _sections_unfolded = [ "Region", "Transform" ]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Ramp1" index="0"]
@@ -63,7 +63,7 @@ shape = SubResource( 2 )
 position = Vector2( 120, 0 )
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 186, 0, 60, 60 )
+region_rect = Rect2( 186, 186, 60, 60 )
 _sections_unfolded = [ "Region", "Transform" ]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Ramp2" index="0"]
