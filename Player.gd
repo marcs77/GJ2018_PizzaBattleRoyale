@@ -10,6 +10,7 @@ export (float) var JUMP_SPEED = 250
 export (float) var MAX_WALK_SPEED = 200
 export (int) var MAX_HEALTH = 100
 export (float) var THROW_SPEED = 800
+export (float) var SHOOT_COOLDOWN = 1
 
 var activated = true
 var vel = Vector2()
@@ -17,6 +18,8 @@ var jumping = false
 var jumpingTime = 0
 var points = 20
 var health
+
+var shootTimer = 0
 
 func addPoints(additionalPoints):
 	points+=additionalPoints
@@ -38,7 +41,7 @@ func _process(delta):
 func is_dead():
 	return health == 0
 	
-func get_input():
+func get_input(delta):
 	var hInput = 0
 	vel.x = 0
 	
@@ -55,15 +58,17 @@ func get_input():
 	elif !Input.is_action_pressed("player_up"):
 		jumping = false
 		
-	if Input.is_action_just_pressed("fire"):
-		if (points > 0):
-			var p = FOOD_ITEM.instance()
-			print("sdfsdfasdf")
-			get_tree().root.add_child(p)
-			p.position = position
-			p.set_linear_velocity(get_local_mouse_position().normalized() * THROW_SPEED)
-			add_collision_exception_with(p)
-			points-=1
+	if Input.is_action_just_pressed("fire") and shootTimer > SHOOT_COOLDOWN and points > 0:
+		var p = FOOD_ITEM.instance()
+		print("sdfsdfasdf")
+		get_tree().root.add_child(p)
+		p.position = position
+		p.set_linear_velocity(get_local_mouse_position().normalized() * THROW_SPEED)
+		add_collision_exception_with(p)
+		points-=1
+		shootTimer = 0
+	else:
+		shootTimer += delta
 	vel.x = hInput * MAX_WALK_SPEED
 	
 		
@@ -83,7 +88,7 @@ func get_input():
 func _physics_process(delta):
 	if !activated:
 		return
-	get_input()
+	get_input(delta)
 	
 	if is_on_floor():
 		vel.y = 0

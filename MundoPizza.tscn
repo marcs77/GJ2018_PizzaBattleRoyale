@@ -42,6 +42,7 @@ GRAVITY_DOWN = 1000.0
 JUMP_SPEED = 400.0
 MAX_WALK_SPEED = 300.0
 THROW_SPEED = 700.0
+SHOOT_COOLDOWN = 1
 
 [node name="Enemy" parent="." index="2" instance=ExtResource( 4 )]
 
