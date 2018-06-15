@@ -7,10 +7,7 @@ path="res://.import/player_killed.png-f91d8fd8b31b8bd5ff028a75a7ba424b.stex"
 [deps]
 
 source_file="res://textures/player_killed.png"
-source_md5="dd90546661415aed1bb4fb23dc371e2e"
-
 dest_files=[ "res://.import/player_killed.png-f91d8fd8b31b8bd5ff028a75a7ba424b.stex" ]
-dest_md5="cc43f21cfedcbeab1a22744078c24b85"
 
 [params]
 

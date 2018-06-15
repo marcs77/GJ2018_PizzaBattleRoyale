@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/classic_hurt.wav-8aec6ea41f2c7e7213d4980d0eab6b84.sample"
+
+[deps]
+
+source_file="res://sounds/classic_hurt.wav"
+dest_files=[ "res://.import/classic_hurt.wav-8aec6ea41f2c7e7213d4980d0eab6b84.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

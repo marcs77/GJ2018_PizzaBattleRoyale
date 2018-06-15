@@ -7,10 +7,7 @@ path="res://.import/pizza_piña.png-65bd85ca25c62e3114b8213830a0ba56.stex"
 [deps]
 
 source_file="res://textures/pizza_piña.png"
-source_md5="e8aa03bcb7c7bcd9372f8f94fa31a27b"
-
 dest_files=[ "res://.import/pizza_piña.png-65bd85ca25c62e3114b8213830a0ba56.stex" ]
-dest_md5="687deace6416aea4697a39a4dc2fb877"
 
 [params]
 
