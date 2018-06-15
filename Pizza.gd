@@ -1,11 +1,10 @@
 extends Area2D
-
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
+var player_class = preload("res://Player.gd")
 
 func _ready():
-	
+	var animation = $AnimationPlayer.get_animation("Grow")
+	animation.set_loop (true)
+	$AnimationPlayer.play("Grow")
 	pass
 
 #func _process(delta):
@@ -15,6 +14,7 @@ func _ready():
 
 
 func _on_Pizza_body_entered(body):
-	if body is Player:
-		pass
+	if body is player_class:
+		
+		queue_free()
 	

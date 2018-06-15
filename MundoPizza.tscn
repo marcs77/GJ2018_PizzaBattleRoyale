@@ -1,15 +1,16 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://TileChorizos.tres" type="TileSet" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Pizza.tscn" type="PackedScene" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
 radius = 29.8452
 
-[node name="Node" type="Node"]
+[node name="Node" type="Node" index="0"]
 
 [node name="TileMap" type="TileMap" parent="." index="0"]
 
@@ -64,5 +65,9 @@ shape = SubResource( 1 )
 [node name="Player" parent="." index="2" instance=ExtResource( 3 )]
 
 position = Vector2( 380, 70 )
+
+[node name="Pizza" parent="." index="3" instance=ExtResource( 4 )]
+
+position = Vector2( 785.082, 479.42 )
 
 
