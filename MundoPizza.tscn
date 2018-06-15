@@ -1,12 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://MundoPizza.gd" type="Script" id=1]
 [ext_resource path="res://TileChorizos.tres" type="TileSet" id=2]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Enemy.tscn" type="PackedScene" id=4]
 [ext_resource path="res://OutOfWorld.tscn" type="PackedScene" id=5]
+[ext_resource path="res://BG.tscn" type="PackedScene" id=6]
 
-[node name="Node" type="Node"]
+[node name="Node" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -49,5 +50,9 @@ position = Vector2( 410, 30 )
 [node name="OutOfWorld" parent="." index="3" instance=ExtResource( 5 )]
 
 position = Vector2( 620, 390 )
+
+[node name="CanvasLayer" parent="." index="4" instance=ExtResource( 6 )]
+
+layer = -10
 
 
