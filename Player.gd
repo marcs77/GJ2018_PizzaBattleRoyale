@@ -9,6 +9,7 @@ export (float) var JUMP_TIME = 0.5
 export (float) var JUMP_SPEED = 250
 export (float) var MAX_WALK_SPEED = 200
 export (int) var MAX_HEALTH = 100
+export (float) var THROW_SPEED = 800
 
 var vel = Vector2()
 var jumping = false
@@ -40,6 +41,14 @@ func get_input():
 		jumpingTime = 0
 	elif !Input.is_action_pressed("player_up"):
 		jumping = false
+		
+	if Input.is_action_just_pressed("fire"):
+		var p = FOOD_ITEM.instance()
+		print("sdfsdfasdf")
+		get_tree().root.add_child(p)
+		p.position = position
+		p.set_linear_velocity(get_local_mouse_position().normalized() * THROW_SPEED)
+		add_collision_exception_with(p)
 		
 	vel.x = hInput * MAX_WALK_SPEED
 func _physics_process(delta):

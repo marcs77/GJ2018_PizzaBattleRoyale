@@ -14,6 +14,9 @@ func _ready():
 #	# Update game logic here.
 #	pass
 
+func _on_death():
+	queue_free()
 
 func _on_Projectile_body_entered(body):
 	print("despacito 2 confirmed")
+	
