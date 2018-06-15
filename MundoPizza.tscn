@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://TileChorizos.tres" type="TileSet" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Pizza.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Hud.tscn" type="PackedScene" id=5]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -36,6 +35,7 @@ tile_data = PoolIntArray( 393218, 0, 0, 393219, 536870913, 0, 393232, 0, 0, 4587
 
 [node name="RigidBody2D" type="RigidBody2D" parent="." index="1"]
 
+editor/display_folded = true
 position = Vector2( 197, 270 )
 input_pickable = false
 collision_layer = 1
@@ -71,7 +71,5 @@ position = Vector2( 380, 70 )
 [node name="Pizza" parent="." index="3" instance=ExtResource( 4 )]
 
 position = Vector2( 785.082, 479.42 )
-
-[node name="Hud" parent="." index="4" instance=ExtResource( 5 )]
 
 
