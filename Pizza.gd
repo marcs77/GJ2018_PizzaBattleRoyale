@@ -1,6 +1,8 @@
 extends Area2D
 var player_class = preload("res://Player.gd")
 
+export(int) var AMOUNT = 1
+
 func _ready():
 	var animation = $AnimationPlayer.get_animation("Grow")
 	animation.set_loop (true)
@@ -15,6 +17,6 @@ func _ready():
 
 func _on_Pizza_body_entered(body):
 	if body is player_class:
-		body.addPoints (1)
+		body.addPoints (AMOUNT)
 		queue_free()
 	
