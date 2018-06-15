@@ -17,7 +17,7 @@ var activated = true
 var vel = Vector2()
 var jumping = false
 var jumpingTime = 0
-var points = 1
+var points = 10
 var health
 
 var shootTimer = 0
