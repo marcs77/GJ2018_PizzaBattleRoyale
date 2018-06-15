@@ -32,6 +32,7 @@ JUMP_TIME = 0.3
 JUMP_SPEED = 300.0
 MAX_WALK_SPEED = 200
 MAX_HEALTH = 100
+THROW_SPEED = 800
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
 
