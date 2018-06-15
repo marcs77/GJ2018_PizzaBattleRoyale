@@ -14,6 +14,13 @@ var idle = false
 var walk_left = false
 var action_timer = 0
 
+var health = 0
+
+func reduceHealth(dmg):
+	health -= dmg
+	if health == 0:
+		queue_free()
+
 func _ready():
 	# Called every time the node is added t the scene.
 	# Initialization here
@@ -28,6 +35,8 @@ func _physics_process(delta):
 	
 	aleft = $RayLeft.is_colliding()
 	aright = $RayRight.is_colliding()
+	
+	
 
 		
 	if action_timer < 2:
@@ -49,3 +58,8 @@ func _physics_process(delta):
 	vel.y += GRAVITY*delta
 		
 	vel = move_and_slide(vel, Vector2(0,-1))
+
+
+func _on_AttackArea_body_entered(body):
+	if body is preload("res://Player.gd"):
+		body.kill()

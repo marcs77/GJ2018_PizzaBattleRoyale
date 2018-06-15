@@ -18,5 +18,6 @@ func _on_death():
 	queue_free()
 
 func _on_Projectile_body_entered(body):
-	print("despacito 2 confirmed")
+	if body is preload("res://Enemy.gd"):
+		body.kill()
 	

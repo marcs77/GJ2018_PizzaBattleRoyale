@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://MundoPizza.gd" type="Script" id=1]
 [ext_resource path="res://TileChorizos.tres" type="TileSet" id=2]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Enemy.tscn" type="PackedScene" id=4]
 
-[node name="Node" type="Node"]
+[node name="Node" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -30,10 +31,22 @@ tile_data = PoolIntArray( -983002, -1610612736, 0, -983001, -1610612736, 0, -983
 
 [node name="Player" parent="." index="1" instance=ExtResource( 3 )]
 
-position = Vector2( 156.257, 249.898 )
+position = Vector2( 250, 240 )
 GRAVITY_DOWN = 1000.0
 JUMP_SPEED = 400.0
 MAX_WALK_SPEED = 300.0
 THROW_SPEED = 700.0
+
+[node name="Enemy" parent="." index="2" instance=ExtResource( 4 )]
+
+position = Vector2( 1080, -10 )
+
+[node name="Enemy2" parent="." index="3" instance=ExtResource( 4 )]
+
+position = Vector2( 1540, -10 )
+
+[node name="Enemy3" parent="." index="4" instance=ExtResource( 4 )]
+
+position = Vector2( 2660, -180 )
 
 
