@@ -1,9 +1,9 @@
 extends CanvasLayer
 
-var player
+onready var player = get_tree().root.get_node ("Player")
 
 func _ready():
-	player = get_node ("../Player")
+	pass
 	
 func _process(delta):
 	$Label.text = str (player.points)
