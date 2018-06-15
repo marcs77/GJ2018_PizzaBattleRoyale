@@ -9,7 +9,7 @@
 custom_solver_bias = 0.0
 radius = 17.9361
 
-[node name="Projectile" type="RigidBody2D"]
+[node name="Projectile" type="RigidBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -21,7 +21,7 @@ bounce = 0.0
 gravity_scale = 1.0
 custom_integrator = false
 continuous_cd = 0
-contacts_reported = 1
+contacts_reported = 25
 contact_monitor = true
 sleeping = false
 can_sleep = true

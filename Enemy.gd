@@ -14,6 +14,7 @@ export (float) var RADIUS = 800
 var vel = Vector2()
 
 var idle = false
+var jumping = false
 var walk_left = false
 var action_timer = 0
 var shootTime = 0
@@ -85,6 +86,22 @@ func _physics_process(delta):
 		else:
 			shootTime += delta
 	vel = move_and_slide(vel, Vector2(0,-1))
+	
+	if jumping:
+		$AnimatedSprite.animation = "jump"
+	else:
+		
+		if vel.x != 0:
+			if !(is_on_floor() || is_on_wall()):
+				$AnimatedSprite.animation = "jump"
+			else:
+				$AnimatedSprite.animation ="run"		
+		else:
+			$AnimatedSprite.animation = "stand"
+	if vel.x > 0:
+		$AnimatedSprite.flip_h = false
+	elif vel.x < 0:
+		$AnimatedSprite.flip_h = true
 
 
 func _on_AttackArea_body_entered(body):

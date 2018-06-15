@@ -29,7 +29,8 @@ func _on_death():
 func _on_Projectile_body_entered(body):
 	if body is preload("res://Enemy.gd"):
 		body.reduceHealth (20)
-		queue_free()
+	
+	queue_free()	
 	
 	
 	
