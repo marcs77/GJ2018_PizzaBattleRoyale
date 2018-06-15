@@ -12,7 +12,9 @@ extents = Vector2( 30, 30 )
 custom_solver_bias = 0.0
 points = PoolVector2Array( 30, -30, 30, 30, -30, 30 )
 
-[node name="Node" type="Node" index="0"]
+[node name="Node" type="Node"]
+
+editor/display_folded = true
 
 [node name="Brick1" type="Sprite" parent="." index="0"]
 
