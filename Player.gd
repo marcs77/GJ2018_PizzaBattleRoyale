@@ -15,15 +15,25 @@ var vel = Vector2()
 var jumping = false
 var jumpingTime = 0
 var points = 0
-var health 
+var health
 
 func addPoints(additionalPoints):
 	points+=additionalPoints
 
 func _ready():
 	$AnimatedSprite.play()
+	health = MAX_HEALTH
 	pass
 
+func reduceHealth (healthToReduce):
+	health = clamp (health -healthToReduce,0,MAX_HEALTH)
+	
+func _process(delta):
+	pass
+
+func is_dead():
+	return health == 0
+	
 func get_input():
 	var hInput = 0
 	vel.x = 0
