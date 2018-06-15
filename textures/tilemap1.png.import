@@ -7,10 +7,7 @@ path="res://.import/tilemap1.png-3b1f3cbe019c59d44754a92a233fd38b.stex"
 [deps]
 
 source_file="res://textures/tilemap1.png"
-source_md5="1a4fa771cc0c79068415c98e6c9ac4d9"
-
 dest_files=[ "res://.import/tilemap1.png-3b1f3cbe019c59d44754a92a233fd38b.stex" ]
-dest_md5="1af5b6138a488f15198560c551db9cd5"
 
 [params]
 
