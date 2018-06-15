@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/player_standing.png-a2bc4f2f0464b65204a0ead8258d4853.stex"
+path="res://.import/player_killed.png-f91d8fd8b31b8bd5ff028a75a7ba424b.stex"
 
 [deps]
 
-source_file="res://textures/player_standing.png"
-dest_files=[ "res://.import/player_standing.png-a2bc4f2f0464b65204a0ead8258d4853.stex" ]
+source_file="res://textures/player_killed.png"
+dest_files=[ "res://.import/player_killed.png-f91d8fd8b31b8bd5ff028a75a7ba424b.stex" ]
 
 [params]
 

@@ -9,6 +9,13 @@ func restart():
 	
 func _process(delta):
 	if ($Player.is_dead()):
+		$Player.activated = false
+		$Player.get_node ("AnimatedSprite").animation ="killed"
+		var t = Timer.new()
+		t.set_wait_time(2)
+		add_child(t)
+		t.start()
+		yield(t, "timeout") 
 		restart()
 		
 	

@@ -11,6 +11,7 @@ export (float) var MAX_WALK_SPEED = 200
 export (int) var MAX_HEALTH = 100
 export (float) var THROW_SPEED = 800
 
+var activated = true
 var vel = Vector2()
 var jumping = false
 var jumpingTime = 0
@@ -80,6 +81,8 @@ func get_input():
 			$AnimatedSprite.animation = "stand"
 	
 func _physics_process(delta):
+	if !activated:
+		return
 	get_input()
 	
 	if is_on_floor():
