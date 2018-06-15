@@ -1,6 +1,4 @@
-extends Panel
-
-var style = StyleBoxFlat.new()
+extends CanvasLayer
 
 var player
 

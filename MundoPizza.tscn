@@ -15,6 +15,7 @@ radius = 29.8452
 
 [node name="TileMap" type="TileMap" parent="." index="0"]
 
+position = Vector2( -327.279, 12.5876 )
 mode = 0
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 60, 60 )
