@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+export (PackedScene) var FOOD_ITEM
+
 export (float) var GRAVITY_DOWN = 800
 #export (float) var GRAVITY_UP = 800
 

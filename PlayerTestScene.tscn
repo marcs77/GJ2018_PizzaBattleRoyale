@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Projectile.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://TileChorizos.tres" type="TileSet" id=3]
+
+[node name="Node" type="Node" index="0"]
+
+[node name="Projectile" parent="." index="0" instance=ExtResource( 1 )]
+
+position = Vector2( 620, 270 )
+
+[node name="Player" parent="." index="1" instance=ExtResource( 2 )]
+
+position = Vector2( 380, 70 )
+
+[node name="TileMap" type="TileMap" parent="." index="2"]
+
+z_index = 1
+mode = 0
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 60, 60 )
+cell_quadrant_size = 60
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( 393218, 0, 0, 393219, 536870913, 0, 393232, 0, 0, 458755, 0, 0, 458756, 536870913, 0, 458767, 0, 0, 458768, 0, 0, 524291, 0, 0, 524292, 0, 0, 524293, 0, 0, 524294, 0, 0, 524295, 536870913, 0, 524302, 0, 0, 524303, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 589836, 0, 0, 589837, 0, 0, 589838, 0, 0 )
+_sections_unfolded = [ "Z Index" ]
+
+
