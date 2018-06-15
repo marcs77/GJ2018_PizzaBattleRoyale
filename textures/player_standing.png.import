@@ -7,7 +7,10 @@ path="res://.import/player_standing.png-a2bc4f2f0464b65204a0ead8258d4853.stex"
 [deps]
 
 source_file="res://textures/player_standing.png"
+source_md5="a6330913c5a0f4df18abeccdde35fbd8"
+
 dest_files=[ "res://.import/player_standing.png-a2bc4f2f0464b65204a0ead8258d4853.stex" ]
+dest_md5="95d7bdd2f9a7a01969d0e358e7acdc60"
 
 [params]
 

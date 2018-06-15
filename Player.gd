@@ -27,6 +27,9 @@ func _ready():
 
 func reduceHealth (healthToReduce):
 	health = clamp (health -healthToReduce,0,MAX_HEALTH)
+
+func kill ():
+	health = 0
 	
 func _process(delta):
 	pass
